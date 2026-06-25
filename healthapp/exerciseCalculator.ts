@@ -56,13 +56,15 @@ const calculateExercises = (stats: number[], target: number): statSheet => {
   };
 };
 
-try {
-  const { targetHours, hours } = parseArguments2(process.argv);
-  console.log(calculateExercises(hours, targetHours));
-} catch (error: unknown) {
-  let errorMessage = 'Something bad happened';
-  if (error instanceof Error) errorMessage += ' Error: ' + error.message;
-  console.log(errorMessage);
+if (process.argv[1] === import.meta.filename) {
+  try {
+    const { targetHours, hours } = parseArguments2(process.argv);
+    console.log(calculateExercises(hours, targetHours));
+  } catch (error: unknown) {
+    let errorMessage = 'Something bad happened';
+    if (error instanceof Error) errorMessage += ' Error: ' + error.message;
+    console.log(errorMessage);
+  }
 }
 
 export default calculateExercises;
