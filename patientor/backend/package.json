@@ -9,7 +9,7 @@
   "scripts": {
     "tsc": "tsc",
     "dev": "concurrently \"tsc --watch\" \"node --watch src/index.ts\"",
-    "start": "node index.ts",
+    "start": "node src/index.ts",
     "lint": "eslint ."
   },
   "devDependencies": {
